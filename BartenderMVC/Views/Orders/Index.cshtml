@@ -1,0 +1,40 @@
+﻿@model IEnumerable<BartenderMVC.Models.Order>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Drinks</h2>
+<table class="table">
+    <tr>
+        <th>
+            Drink Name
+        </th>
+        <th>
+            Drink Cost
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.drinkName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.drinkCost)
+            </td>
+        </tr>
+
+        @Html.ActionLink("Details", "Details", new { id = item.ID })
+        <br />
+            @Html.ActionLink("Order Complete", "Delete", new { id = item.ID })
+            <br />
+            @Html.ActionLink("Back to List", "Index")
+    }
+</table>
+
+
+      
+      

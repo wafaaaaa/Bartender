@@ -1,0 +1,11 @@
+﻿@{
+ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Bartender</h1>
+    <p class="lead">Welcome to the home page.</p>
+    @Html.ActionLink("Click to edit the menu", "Index", "Menus")
+    <br />
+    @Html.ActionLink("Click to view the order queue", "Index", "Orders")
+</div>

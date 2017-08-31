@@ -1,0 +1,49 @@
+﻿@model IEnumerable<BartenderMVC.Models.Menu>
+
+@{
+    ViewBag.Title = "Menu";
+}
+
+<h1>Menu</h1>
+<h2>@Html.ActionLink("Make an Order", "Index", "Orders")</h2>
+<br />
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>Drink Name
+        </th>
+        <th>Drink Cost
+        </th>
+        <th>Options
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.drinkName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.drinkCost)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID }) |
+            @Html.ActionLink("Add to Order", "Index", "Orders")
+            </tr>
+}
+</table>
+<img src="~/images/hennessy.jpg" alt="Hennessy Glass" height="300" width="300" />
+
+<img src="~/images/champagne.jpg" alt="Glass of Champagne" height="300" width="300" />
+
+<img src="~/images/whiskey.jpg" alt="Glass of Whiskey" height="300" width="300" />
+
+<img src="~/images/tequila.jpg" alt="A shot of Tequila" height="300" width="300" />
+
+<img src="~/images/red wine.jpg" alt="A glass of Red Wine" height="300" width="300" />
+
+<img src="~/images/white wine.jpg" alt="A glass of White Wine" height="300" width="300" />
